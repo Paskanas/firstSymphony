@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<h1>Create animal</h1>
+<form method='post' action={{path('save')}}>
+<input type='text' name='name'/>
+<button type='submit'>Add</button>
+
+</form>
+{% endblock %}
+
+
+{% block title %}
+    Create animal
+{% endblock %}

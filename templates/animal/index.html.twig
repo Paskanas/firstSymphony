@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<h1>Animals list</h1>
+<ul>
+  {% for animal in animals %}
+      <li>
+       <h3> {{ animal.name }} </h3>
+       <a href="{{path('edit',{'id': animal.id})}}"> Edit </a>
+       <form method='post' action={{path('delete', {id:animal.id})}}>
+          <button type='submit'>Detete</button>
+        </form>
+      </li>
+  {% else %}
+      No animals have been found.
+  {% endfor %}
+</ul>
+{% endblock %}
+
+
+{% block title %}
+    Show animals
+{% endblock %}
